@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Her</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    font-family:Arial,sans-serif;
+
+    background:url('Background.jpg') center/cover no-repeat;
+}
+
+/* MAIN CONTAINER */
+.container{
+    width:100%;
+    max-width:900px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+
+    background:rgba(0,0,0,0.75);
+
+    padding:25px;
+    border-radius:20px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+/* IMAGE BOX */
+.box{
+    width:100%;
+    height:250px;
+
+    overflow:hidden;
+
+    border-radius:15px;
+    border:2px solid white;
+}
+
+.box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:0.3s;
+}
+
+.box img:hover{
+    transform:scale(1.05);
+}
+
+/* TEXT */
+.text{
+    color:white;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:20px;
+    border-radius:15px;
+
+    font-size:15px;
+    line-height:1.7;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+/* BUTTON */
+.button-container{
+    grid-column:1/3;
+    text-align:center;
+}
+
+.button{
+    display:inline-block;
+
+    padding:12px 30px;
+
+    background:linear-gradient(45deg,#ff0066,#ff66cc);
+
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    transition:0.3s;
+
+    box-shadow:0 5px 15px rgba(255,0,102,0.4);
+}
+
+.button:hover{
+    transform:scale(1.05);
+
+    background:linear-gradient(45deg,#ff66cc,#ff0066);
+
+    box-shadow:0 10px 20px rgba(255,0,102,0.6);
+}
+
+/* BOTTOM TEXT */
+.bottom-text{
+    grid-column:1/3;
+
+    color:white;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:15px;
+    border-radius:15px;
+
+    text-align:center;
+
+    font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .button-container,
+    .bottom-text{
+        grid-column:auto;
+    }
+
+    .box{
+        height:220px;
+    }
+
+    .text{
+        font-size:14px;
+    }
+
+    .button{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- TOP IMAGE -->
+    <div class="box">
+        <img src="https://i.pinimg.com/1200x/7e/01/af/7e01af2aec5f36e5c245f8e77f4bb47b.jpg" alt="Image 1">
+    </div>
+
+    <!-- TOP TEXT -->
+    <div class="text">
+        i miss youuuuuuuuuuuu :(
+        
+    </div>
+
+    <!-- BUTTON -->
+    <div class="button-container">
+        <a href="https://www.facebook.com/michael.jeff.silverio.guiao" class="button">
+            REPLY
+        </a>
+    </div>
+
+    <!-- BOTTOM TEXT -->
+    <div class="text">
+        im sorry :(
+    </div>
+
+    <!-- BOTTOM IMAGE -->
+    <div class="box">
+        <img src="https://i.pinimg.com/736x/b8/f2/ce/b8f2ce7b9190c84d1508753be3c419ff.jpg" alt="Image 2">
+    </div>
+
+    <!-- FINAL TEXT -->
+    <div class="bottom-text">
+        i love youu....
+    </div>
+
+</div>
+
+</body>
+</html>

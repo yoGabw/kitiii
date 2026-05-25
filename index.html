@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hai</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background-image:url('Background.jpg');
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            min-height:100vh;
+            padding:20px;
+
+            font-family:Arial,sans-serif;
+            color:white;
+        }
+
+        .container{
+            text-align:center;
+            background:rgba(0,0,0,0.75);
+
+            padding:30px;
+            border-radius:20px;
+
+            width:100%;
+            max-width:600px;
+
+            box-shadow:0 0 25px rgba(0,0,0,0.5);
+        }
+
+        .photo{
+            width:100%;
+            max-width:500px;
+            height:auto;
+
+            border-radius:15px;
+            margin-bottom:20px;
+
+            transition:0.3s;
+        }
+
+        .photo:hover{
+            transform:scale(1.03);
+        }
+
+        .text{
+            font-size:16px;
+            line-height:1.7;
+            margin-bottom:25px;
+        }
+
+        .next-button{
+            display:inline-block;
+
+            padding:12px 28px;
+            font-size:18px;
+
+            color:white;
+            text-decoration:none;
+
+            border-radius:10px;
+
+            background:linear-gradient(45deg,#ff0066,#ff66cc);
+
+            transition:0.3s;
+
+            box-shadow:0 5px 15px rgba(255,0,102,0.4);
+        }
+
+        .next-button:hover{
+            transform:scale(1.05);
+
+            background:linear-gradient(45deg,#ff66cc,#ff0066);
+
+            box-shadow:0 10px 20px rgba(255,0,102,0.6);
+        }
+
+        @media(max-width:768px){
+
+            .container{
+                padding:20px;
+            }
+
+            .text{
+                font-size:14px;
+            }
+
+            .next-button{
+                width:100%;
+                font-size:16px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="Example.jpg" alt="Photo" class="photo">
+
+        <div class="text">
+            Haii
+            <br><br>
+        a flower for u
+        </div>
+
+        <a href="next.html" class="next-button">
+            Next
+        </a>
+
+    </div>
+
+</body>
+</html>
