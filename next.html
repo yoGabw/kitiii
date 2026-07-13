@@ -3,207 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For Her</title>
+<title>14 months</title>
 
 <style>
-
-/* RESET */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Georgia,serif;
 }
 
-/* BODY */
 body{
+    background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://i.pinimg.com/1200x/5a/14/40/5a1440572dbaaec1550ade7113652715.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    color:#fff;
+}
+
+.container{
+    width:100%;
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
-
-    font-family:Arial,sans-serif;
-
-    background:url('Background.jpg') center/cover no-repeat;
+    flex-direction:column;
+    padding:40px 20px;
+    text-align:center;
+    animation:fadeIn 1.5s ease;
 }
 
-/* MAIN CONTAINER */
-.container{
-    width:100%;
-    max-width:900px;
+h1{
+    font-size:5rem;
+    letter-spacing:4px;
+    margin-bottom:10px;
+    text-shadow:0 0 20px rgba(255,255,255,.3);
+}
 
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+.subtitle{
+    font-size:1rem;
+    opacity:.9;
+    margin-bottom:40px;
+    font-style:italic;
+}
 
-    background:rgba(0,0,0,0.75);
-
-    padding:25px;
+.letter{
+    max-width:800px;
+    background:rgba(0,0,0,.45);
+    border:1px solid rgba(255,255,255,.15);
+    padding:40px;
     border-radius:20px;
-
-    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    backdrop-filter:blur(8px);
+    line-height:2;
+    font-size:1.1rem;
+    text-align:left;
+    box-shadow:0 0 30px rgba(0,0,0,.4);
+    margin-bottom:40px;
 }
 
-/* IMAGE BOX */
-.box{
-    width:100%;
-    height:250px;
-
-    overflow:hidden;
-
-    border-radius:15px;
-    border:2px solid white;
+.letter p{
+    margin-bottom:20px;
 }
 
-.box img{
+.heart{
+    font-size:5rem;
+    animation:pulse 1.2s infinite;
+    margin:10px 0 20px;
+}
+
+button{
+    border:none;
+    padding:15px 35px;
+    font-size:1rem;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s ease;
+    font-weight:bold;
+}
+
+#yesBtn{
+    background:#722F37;
+    color:#fff;
+    box-shadow:0 0 20px rgba(114,47,55,.6);
+}
+
+#yesBtn:hover{
+    transform:scale(1.08);
+}
+
+.final-message{
+    margin-top:25px;
+    font-size:2rem;
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+/* POPUP BACKGROUND */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
-    object-fit:cover;
-
-    transition:0.3s;
-}
-
-.box img:hover{
-    transform:scale(1.05);
-}
-
-/* TEXT */
-.text{
-    color:white;
-
-    background:rgba(255,255,255,0.08);
-
-    padding:20px;
-    border-radius:15px;
-
-    font-size:15px;
-    line-height:1.7;
-
-    display:flex;
-    align-items:center;
+    background:rgba(0,0,0,.7);
+    display:none;
     justify-content:center;
+    align-items:center;
+    z-index:999;
+}
 
+/* GLASS TRANSPARENT POPUP */
+.popup-content{
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    padding:25px;
+    border-radius:20px;
     text-align:center;
+    max-width:350px;
+    width:90%;
+    box-shadow:0 0 40px rgba(0,0,0,.5);
+    animation:pop .4s ease;
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.25);
 }
 
-/* BUTTON */
-.button-container{
-    grid-column:1/3;
-    text-align:center;
-}
-
-.button{
-    display:inline-block;
-
-    padding:12px 30px;
-
-    background:linear-gradient(45deg,#ff0066,#ff66cc);
-
-    color:rgb(255, 255, 255);
-    text-decoration:none;
-
-    border-radius:10px;
-
-    font-size:18px;
-    font-weight:bold;
-
-    transition:0.3s;
-
-    box-shadow:0 5px 15px rgba(255,0,102,0.4);
-}
-
-.button:hover{
-    transform:scale(1.05);
-
-    background:linear-gradient(45deg,#ff66cc,#ff0066);
-
-    box-shadow:0 10px 20px rgba(255,0,102,0.6);
-}
-
-/* BOTTOM TEXT */
-.bottom-text{
-    grid-column:1/3;
-
-    color:white;
-
-    background:rgba(255,255,255,0.08);
-
-    padding:15px;
+.popup-content img{
+    width:100%;
     border-radius:15px;
-
-    text-align:center;
-
-    font-size:14px;
+    margin-bottom:20px;
 }
 
-/* MOBILE */
+.popup-content h2{
+    color:#722F37;
+    margin-bottom:10px;
+}
+
+.popup-content p{
+    margin-bottom:20px;
+}
+
+.popup-content button{
+    background:#722F37;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    padding:12px 25px;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.1)}
+    100%{transform:scale(1)}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
 @media(max-width:768px){
-
-    .container{
-        grid-template-columns:1fr;
+    h1{
+        font-size:3rem;
     }
 
-    .button-container,
-    .bottom-text{
-        grid-column:auto;
+    .letter{
+        padding:25px;
     }
 
-    .box{
-        height:220px;
+    .heart{
+        font-size:4rem;
     }
-
-    .text{
-        font-size:14px;
-    }
-
-    .button{
-        width:100%;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<section class="container">
 
-    <!-- TOP IMAGE -->
-    <div class="box">
-        <img src="https://i.pinimg.com/1200x/7e/01/af/7e01af2aec5f36e5c245f8e77f4bb47b.jpg" alt="Image 1">
-    </div>
+<h1>HAPPYY 15 MONTHS!!!</h1>
+<p class="subtitle">By yoGabw ♡</p>
 
-    <!-- TOP TEXT -->
-    <div class="text">
-        i miss youuuuuuuuuuuu :(
-        
-    </div>
+<div class="letter">
 
-    <!-- BUTTON -->
-    <div class="button-container">
-        <a href="https://www.facebook.com/michael.jeff.silverio.guiao" class="button">
-            REPLY
-        </a>
-    </div>
+<p>Haaaaaaii,</p>
 
-    <!-- BOTTOM TEXT -->
-    <div class="text">
-        im sorry :(
-    </div>
+<p>
+yayayyyay
+</p>
 
-    <!-- BOTTOM IMAGE -->
-    <div class="box">
-        <img src="https://i.pinimg.com/736x/b8/f2/ce/b8f2ce7b9190c84d1508753be3c419ff.jpg" alt="Image 2">
-    </div>
+<p>
+i hope you like this<br><br>
 
-    <!-- FINAL TEXT -->
-    <div class="bottom-text">
-        i love youu....
-    </div>
+this was actually for our14th, but i didnt finished in time
+but id like to give this to you Now hezshsuah<br><br>
+
+sorry if this was too little, i had no time due....
+at least ill make it upp next timee<br><br>
+
+anyways, its out 15th baby, yayqy
+i hope we gett narrieddd naa, i really really wanna soend time with you sosoos much more<br><br>
+
+
+
+i know this messge isnt long enough, but im eeepy <br>
+ 
+deal with it 
+mwshsh
+</p>
+
+
+<p style="margin-top:30px;">
+meow
+</p>
 
 </div>
+
+<div class="heart"> </div>
+
+<button id="yesBtn">Click</button>
+
+<div class="final-message" id="finalMessage">
+Thank you✨
+</div>
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<img src="https://i.pinimg.com/736x/00/1b/dc/001bdc6d2e30d196617ed45e55eac198.jpg" alt="Love">
+
+<h2>I LOVEE YOUUU SOO MUCH</h2>
+<p>🐱</p>
+
+<button id="closePopup">MWAH</button>
+
+</div>
+</div>
+
+</section>
+
+<script>
+const yesBtn = document.getElementById("yesBtn");
+const finalMessage = document.getElementById("finalMessage");
+const popup = document.getElementById("popup");
+const closePopup = document.getElementById("closePopup");
+
+yesBtn.addEventListener("click", () => {
+    finalMessage.style.display = "block";
+    yesBtn.innerHTML = "did you like it?";
+    popup.style.display = "flex";
+});
+
+closePopup.addEventListener("click", () => {
+    popup.style.display = "none";
+});
+</script>
 
 </body>
 </html>
